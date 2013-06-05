@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Toggle</title>
+<style>
+
+html, body, div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.machine {
+  padding: 100px;
+  text-align: center;
+}
+
+.machine > .machine-on,
+.machine.is-on > .machine-off {
+  display: none;
+}
+
+.machine > .button-off,
+.machine.is-on > .machine-on {
+  display: block;
+}
+
+
+/* --- EXPANDED VERSION FOR CLARITY --- */
+
+/*
+
+.machine > .machine-on {
+  display: none;
+}
+
+.machine > .button-off {
+  display: block;
+}
+
+.machine.is-on > .machine-on {
+  display: block;
+}
+
+.machine.is-on > .machine-off {
+  display: none;
+}
+
+*/
+
+</style>
+</head>
+<body>
+  
+<div class="machine">
+  
+  <div class="machine-on">
+    <strong>Machine is ON</strong><br>
+    <button id="off-button">TURN OFF</button>
+  </div>
+  
+  <div class="machine-off">
+    <strong>Machine is OFF</strong><br>
+    <button id="on-button">TURN ON</button>
+  </div>
+  
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  
+  $("#off-button").on("click", function(event){
+    $(this).closest(".machine").removeClass("is-on");
+  });
+  
+  $("#on-button").on("click", function(event){
+    $(this).closest(".machine").addClass("is-on");
+  });
+  
+});
+
+</script>
+</body>
+</html>
