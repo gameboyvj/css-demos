@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button</title>
+<style>
+
+html, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: middle;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 200px;
+  text-align: center;
+}
+
+.like-button {
+  display: inline-block;
+  width: 30px;
+  background: transparent url("like.png") no-repeat 0 0;
+  cursor: pointer;
+  height: 0;
+  padding-top: 30px;
+}
+
+.like-button:hover {
+  background-position: 0 -29px;
+}
+
+
+</style>
+</head>
+<body>
+
+  <button class="like-button">Like</button>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 <title>Page</title>
 <style>
 
-html, body, header, h1, nav, ul, li, a, footer, small, button {
+html, body, header, h1, h2, nav, ul, li, a, footer, small {
   margin: 0;
   padding: 0;
   border: 0;
@@ -28,6 +28,12 @@ ul {
   list-style: none;
 }
 
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
 .group:after {
   content: "";
   display: table;
@@ -36,12 +42,14 @@ ul {
 
 .header {
   background: #f00;
-  border-bottom: 1px solid #333;
+  border-bottom: 3px solid #333;
 }
 
 .header-wrap {
   width: 900px;
   margin: auto;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
 }
 
 .header a {
@@ -54,8 +62,13 @@ ul {
 
 .header-logo > a {
   display: block;
-  background: #333;
   padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header-logo > a:hover {
+  background: #333;
 }
 
 .header-nav {
@@ -63,13 +76,12 @@ ul {
 }
 
 .header-nav > ul {
-  border-right: 1px solid #333;
 }
 
 .header-nav > ul > li {
   position: relative;
   float: left;
-  border-left: 1px solid #333;
+  border-left: 3px solid #333;
 }
 
 .header-nav > ul > li > a {
@@ -77,16 +89,17 @@ ul {
   padding: 10px 20px;
 }
 
-.header-nav > ul > li > a:hover {
+.header-nav > ul > li:hover > a {
   background: #333;
 }
 
 .drop-down {
   display: none;
   position: absolute;
-  left: 0;
+  left: -3px;
   background: #fff;
   border: 3px solid #333;
+  width: 300px;
 }
 
 .header-nav > ul > li:hover > .drop-down {
@@ -94,7 +107,6 @@ ul {
 }
 
 .drop-down > li {
-  padding: 5px 10px;
   border-top: 3px solid #333;
 }
 
@@ -102,8 +114,18 @@ ul {
   border-top: 0;
 }
 
+.drop-down > li > a {
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+}
+
+.drop-down > li:hover > a {
+  background: #ccc;
+}
+
 .badge {
-  display: inline-block;
+  display: inline;
   background: #333;
   padding: 2px 5px;
   border-radius: 15px;
@@ -119,12 +141,14 @@ ul {
   width: 860px;
   padding: 20px;
   margin: auto;
+  border-left: 3px solid #ddd;
+  border-right: 3px solid #ddd;
 }
 
 .left {
   float: left;
   width: 200px;
-  border-right: 1px solid #ccc;
+  border-right: 3px solid #ddd;
   padding: 0 20px 0 0;
 }
 
@@ -139,6 +163,7 @@ ul {
   margin: auto;
   background: #ddd;
   color: #999;
+  border: 3px solid #ccc;
 }
 
 .footer a {
@@ -162,27 +187,11 @@ ul {
   padding: 0 0 0 20px;
 }
 
-.like-button {
-  display: inline-block;
-  width: 30px;
-  background: transparent url("like.png") no-repeat 0 0;
-  cursor: pointer;
-  height: 0;
-  padding-top: 30px;
-}
-
-.like-button:hover {
-  background-position: 0 -29px;
-}
-
-
 </style>
 </head>
 <body>
 
-
   <header class="header">
-    
     <div class="header-wrap group">
     
       <h1 class="header-logo">
@@ -195,9 +204,9 @@ ul {
           <li>
             <a href="#">Notifications <strong class="badge">3</strong></a>
             <ul class="drop-down">
-              <li>Someone liked your picture!</li>
-              <li>You have a new friend request.</li>
-              <li>Welcome to App Academy Students</li>
+              <li><a href="#">Someone liked your picture.</a></li>
+              <li><a href="#">You have a new friend request.</a></li>
+              <li><a href="#">Welcome to App Academy.</a></li>
             </ul>
           </li>
           <li><a href="#">Messages</a></li>
@@ -206,31 +215,26 @@ ul {
       </nav>
       
     </div>
-    
   </header>
   
   <div class="page group">
-    
     <section class="left">
+      
+      <h2>Sidebar</h2>
     
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     
     </section>
-    
     <section class="right">
+      
+      <h2>Content</h2>
       
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       
-      <div class="tools">
-        <button class="like-button">Like</button>
-      </div>
-      
     </section>
-    
   </div>
   
   <footer class="footer group">
-    
     <small class="footer-copy">
       &copy; 2013 App Academy.
     </small>
@@ -242,9 +246,7 @@ ul {
         <li><a href="#">Privacy</a></li>
       </ul>
     </nav>
-    
   </footer>
-
 
 </body>
 </html>
