@@ -149,10 +149,10 @@ var Carrousel = (function(){
   }
   
   var move = function(){
-    html = (currentItem + 1) + " / " + items.length;
+    var html = (currentItem + 1) + " / " + items.length;
     numberLabel.html(html);
     
-    leftPosition = currentItem * itemWidth * -1;
+    var leftPosition = currentItem * itemWidth * -1;
     itemsHolder.stop().animate({"left": leftPosition + "px"}, 1000);
   }
   
