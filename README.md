@@ -13,5 +13,5 @@ Topics to know:
 - Pseudo content (:after/:before)
 - Clearfix (use .group)
 - Positioning (static, relative, absolute, fixed)
-- Pseudo classes (:hover/:active)
+- Pseudo classes (:hover/:active/:focus)
 - Box sizing (change the way the box model is calculated)
