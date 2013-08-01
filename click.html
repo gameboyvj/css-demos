@@ -4,23 +4,25 @@
 <title>Click</title>
 <style>
 
-* {
-  box-sizing: border-box;
+html, body, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
 }
 
 .group:after {
   content: "";
   clear: both;
   display: table;
-}
-
-body, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: sans-serif;
 }
 
 h1 {
@@ -36,15 +38,15 @@ ul {
 
 .grid {
   margin: 30px auto;
-  width: 310px;
+  width: 300px;
   border: 5px solid black;
   background: url("cat.jpg") no-repeat center;
 }
 
 .grid > li {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background: gray;
   border: 5px solid black;
   cursor: pointer;
@@ -76,7 +78,7 @@ ul {
   <li></li>
 </ul>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
 <script>
 
 $(document).ready(function(){

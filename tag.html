@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cat Tagger</title>
+<style>
+
+html, body, div, figure, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+h1 {
+  margin: 30px 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.photo {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  border: 10px solid black;
+  cursor: crosshair;
+  overflow: hidden;
+}
+
+.photo > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tag {
+  display: none;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: transparent;
+  border: 5px solid blue;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.is-tagged > .tag {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+  
+  <h1>Cat Tagger!</h1>
+  
+  <figure class="photo">
+    <div class="tag"></div>
+    <img src="cats.jpg" alt="Cats">
+  </figure>
+
+  
+<script src="jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+  
+  $(".photo").on("click", function(event){
+    
+    var photo = $(this);
+    var tag = photo.find(".tag");
+    
+    photo.addClass("is-tagged");
+    
+    var x = parseFloat((event.pageX - photo.offset().left) / photo.width()) * 100;
+    var y = parseFloat((event.pageY - photo.offset().top) / photo.height()) * 100;
+    
+    tag.css({
+      "left": x + "%",
+      "top": y + "%"
+    });
+    
+  });
+});
+
+</script>
+</body>
+</html>
