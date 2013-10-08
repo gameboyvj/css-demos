@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Toggle</title>
-<style>
+  <meta charset="utf-8">
+  <title>Toggle A Machine!</title>
+  <style>
+
+/* --- Reset user agent styles --- */
 
 html, body, div {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
@@ -24,70 +27,86 @@ body {
   text-align: center;
 }
 
-.machine > .machine-on,
-.machine.is-on > .machine-off {
-  display: none;
-}
-
-.machine > .machine-off,
-.machine.is-on > .machine-on {
-  display: block;
-}
-
-
-/* --- EXPANDED VERSION FOR CLARITY --- */
-
 /*
-
-.machine > .machine-on {
-  display: none;
-}
-
-.machine > .machine-off {
-  display: block;
-}
-
-.machine.is-on > .machine-on {
-  display: block;
-}
-
-.machine.is-on > .machine-off {
-  display: none;
-}
-
+  Here is where the toggle happens.
+  By default the state is off.
+  ".is-on" is the modifier class.
 */
 
-</style>
+.machine-on,
+.is-on > .machine-off {
+  display: none;
+}
+
+.machine-off,
+.is-on > .machine-on {
+  display: block;
+}
+
+/*
+  Here is the expanded version of the toggle
+  for clarity. This code does exactly the same
+  as the two statements above, but is easier
+  to understand at first glance.
+*/
+
+/* --- Default OFF state --- */
+
+.machine-on {
+  display: none;
+}
+
+.machine-off {
+  display: block;
+}
+
+/* --- Modified ON state --- */
+
+.is-on > .machine-on {
+  display: block;
+}
+
+.is-on > .machine-off {
+  display: none;
+}
+
+  </style>
 </head>
 <body>
-  
+
 <div class="machine">
-  
+
   <div class="machine-on">
     <strong>Machine is ON</strong><br>
-    <button id="off-button">TURN OFF</button>
+    <button>TURN OFF</button>
   </div>
-  
+
   <div class="machine-off">
     <strong>Machine is OFF</strong><br>
-    <button id="on-button">TURN ON</button>
+    <button>TURN ON</button>
   </div>
-  
+
 </div>
 
 <script src="jquery.js"></script>
 <script>
 
 $(document).ready(function(){
-  
-  $("#off-button").on("click", function(event){
-    $(this).closest(".machine").removeClass("is-on");
+
+  $(".machine").on("click", "button", function(event){
+
+    var $button = $(this);
+    var $holder = $button.closest("div");
+    var $machine = $holder.closest(".machine");
+
+    if($holder.hasClass("machine-on")){
+      $machine.removeClass("is-on");
+    } else {
+      $machine.addClass("is-on");
+    }
+
   });
-  
-  $("#on-button").on("click", function(event){
-    $(this).closest(".machine").addClass("is-on");
-  });
-  
+
 });
 
 </script>

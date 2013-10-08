@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Click</title>
-<style>
+  <meta charset="utf-8">
+  <title>Click A Cat!</title>
+  <style>
 
-html, body, ul, li {
+html, body, ul, li, h1 {
   margin: 0;
   padding: 0;
   border: 0;
@@ -41,6 +42,7 @@ ul {
   width: 300px;
   border: 5px solid black;
   background: url("cat.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .grid > li {
@@ -60,12 +62,12 @@ ul {
   background: transparent;
 }
 
-</style>
+  </style>
 </head>
 <body>
-  
+
 <h1>Cat Click!</h1>
-  
+
 <ul class="grid group">
   <li></li>
   <li></li>
@@ -82,15 +84,15 @@ ul {
 <script>
 
 $(document).ready(function(){
-  
-  $(".grid > li").on("click", function(){
-    
-    var li = $(this);
-    li.toggleClass("cleared");
-    console.log(li);
-    
+
+  $(".grid > li").on("click", function(event){
+
+    var $li = $(this);
+    $li.toggleClass("cleared");
+    console.log($li);
+
   });
-  
+
 });
 
 </script>
