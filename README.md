@@ -3,7 +3,7 @@
 ### Demos
 - **[Button](./button.html)**: Replacing text with image sprites for a button.
 - **[Carrousel](./button.html)**: Creating a carrousel with floats/positioning and jQuery.
-- **[Center](./click.html)**: Center a collection of floats, using inline-block.
+- **[Center](./center.html)**: Center a collection of floats, using inline-block.
 - **[Click](./click.html)**: Create a grid using floats, changing appearance interactively using jQuery and classes (rather than inline styles).
 - **[Page](./page.html)**: A full styled page, with navigation bar using floats, a dropdown absolutely positioned, and a two colum floated layout. Note the semantic use of HTML tags and classes.
 - **[Positioning](./positioning.html)**: Position a boxes upon boxes with absolute and relative positioning, aditionally showing the power of :hover to allow JavaScript-less interactivity.
