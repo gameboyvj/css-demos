@@ -1,15 +1,18 @@
 # CSS Demos
 
 ### Demos
+- **[Form](./form.html)**: Basic styling of a form with text inputs and a button.
+- **[Modal](./modal.html)**: A modal you can hide and show.
 - **[Button](./button.html)**: Replacing text with image sprites for a button.
-- **[Carrousel](./button.html)**: Creating a carrousel with floats/positioning and jQuery.
+- **[Carrousel](./carrousel.html)**: Creating a carrousel with floats/positioning and jQuery.
 - **[Center](./center.html)**: Center a collection of floats, using inline-block.
 - **[Click](./click.html)**: Create a grid using floats, changing appearance interactively using jQuery and classes (rather than inline styles).
 - **[Page](./page.html)**: A full styled page, with navigation bar using floats, a dropdown absolutely positioned, and a two colum floated layout. Note the semantic use of HTML tags and classes.
-- **[Positioning](./positioning.html)**: Position a boxes upon boxes with absolute and relative positioning, aditionally showing the power of :hover to allow JavaScript-less interactivity.
+- **[Positioning](./positioning.html)**: Position boxes upon boxes with absolute and relative positioning, aditionally showing the power of :hover to allow JavaScript-less interactivity.
 - **[Post](./post.html)**: A demo of a styled collection of posts. Uses floats and semantic HTML.
 - **[Tag](./tag.html)**: Tag a collection of cats using positioning.
 - **[Toggle](./toggle.html)**: A demo of a button toggling visual state using classes rather than inline styles.
+- **[Input](./input.html)**: How to style a hipster input.
 
 ### Topics to know
 - How to use the browser inspector for CSS/HTML
