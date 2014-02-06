@@ -14,16 +14,20 @@ html, body, ul, li, h1 {
   vertical-align: baseline;
 }
 
-body {
-  font-family: sans-serif;
-  background: #fff;
-  color: #000;
+ul {
+  list-style: none;
 }
 
 .group:after {
   content: "";
   clear: both;
-  display: table;
+  display: block;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
 }
 
 h1 {
@@ -31,10 +35,6 @@ h1 {
   text-align: center;
   font-weight: bold;
   font-size: 60px;
-}
-
-ul {
-  list-style: none;
 }
 
 .grid {
@@ -85,7 +85,7 @@ ul {
 
 $(document).ready(function(){
 
-  $(".grid > li").on("click", function(event){
+  $(".grid").on("click", "li", function(event){
 
     var $li = $(this);
     $li.toggleClass("cleared");
