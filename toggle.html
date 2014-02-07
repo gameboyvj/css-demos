@@ -5,69 +5,69 @@
   <title>Toggle A Machine!</title>
   <style>
 
-/* --- Reset user agent styles --- */
+  /* --- Reset user agent styles --- */
 
-html, body, div {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
+  html, body, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+  }
 
-body {
-  font-family: sans-serif;
-  background: #fff;
-  color: #000;
-}
+  body {
+    font-family: sans-serif;
+    background: #fff;
+    color: #000;
+  }
 
-.machine {
-  padding: 100px;
-  text-align: center;
-}
+  .machine {
+    padding: 100px;
+    text-align: center;
+  }
 
-/*
-  Here is where the toggle happens.
-  By default the state is off.
-  ".is-on" is the modifier class.
-*/
+  /*
+    Here is where the toggle happens.
+    By default the state is off.
+    ".is-on" is the modifier class.
+  */
 
-.machine-on,
-.is-on > .machine-off {
-  display: none;
-}
+  .machine-on,
+  .is-on > .machine-off {
+    display: none;
+  }
 
-.machine-off,
-.is-on > .machine-on {
-  display: block;
-}
+  .machine-off,
+  .is-on > .machine-on {
+    display: block;
+  }
 
-/*
-  Here is the expanded version of the toggle
-  for clarity. This code does exactly the same
-  as the two statements above, but is easier
-  to understand at first glance.
-*/
+  /*
+    Here is the expanded version of the toggle
+    for clarity. This code does exactly the same
+    as the two statements above, but is easier
+    to understand at first glance.
+  */
 
-/* --- Default OFF state --- */
+  /* --- Default OFF state --- */
 
-.machine-on {
-  display: none;
-}
+  .machine-on {
+    display: none;
+  }
 
-.machine-off {
-  display: block;
-}
+  .machine-off {
+    display: block;
+  }
 
-/* --- Modified ON state --- */
+  /* --- Modified ON state --- */
 
-.is-on > .machine-on {
-  display: block;
-}
+  .is-on > .machine-on {
+    display: block;
+  }
 
-.is-on > .machine-off {
-  display: none;
-}
+  .is-on > .machine-off {
+    display: none;
+  }
 
   </style>
 </head>
@@ -91,21 +91,26 @@ body {
 <script>
 
 $(document).ready(function(){
-
   $(".machine").on("click", "button", function(event){
 
-    var $button = $(this);
-    var $holder = $button.closest("div");
-    var $machine = $holder.closest(".machine");
+    // Cancel any default html behaviour.
+    // Not necessary in this example though,
+    // as buttons are not in a form.
+    event.preventDefault();
 
-    if($holder.hasClass("machine-on")){
+    var $button = $(this);
+    var $scope = $button.closest("div");
+    var $machine = $scope.closest(".machine");
+
+    if($scope.is(".machine-on")){
+      // Machine is on, turn it off.
       $machine.removeClass("is-on");
     } else {
+      // Machine is off, turn it on.
       $machine.addClass("is-on");
     }
 
   });
-
 });
 
 </script>
